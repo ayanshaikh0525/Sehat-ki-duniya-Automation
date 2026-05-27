@@ -14,7 +14,7 @@ with open("../videos_master.json", "r") as f:
 
 # Find next pending video
 video_data = next(
-    (video for video in videos if not video["uploaded"]),
+    (video for video in videos if not video["platforms"]["youtube"]["uploaded"]),
     None
 )
 
