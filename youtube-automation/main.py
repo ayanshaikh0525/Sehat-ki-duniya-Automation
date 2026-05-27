@@ -2,6 +2,7 @@ import json
 import os
 import re
 from datetime import datetime
+import random
 from drive_helper import (
     download_file,
     get_file_content,
@@ -18,10 +19,19 @@ os.makedirs("temp", exist_ok=True)
 with open("../videos_master.json", "r", encoding="utf-8") as f:
     videos = json.load(f)
 
+# Get only pending videos
+pending_videos = [
+    video for video in videos
+    if not video["platforms"]["youtube"]["uploaded"]
+]
+
+# Shuffle randomly
+random.shuffle(pending_videos)
+
 # Find next pending YouTube upload
 video_data = next(
     (
-        video for video in videos
+        video for video in pending_videos
         if not video["platforms"]["youtube"]["uploaded"]
     ),
     None
