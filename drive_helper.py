@@ -1,9 +1,10 @@
 import io
+
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 
-SCOPES = ['https://www.googleapis.com/auth/drive']
+SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
 
 SERVICE_ACCOUNT_FILE = 'auth/service_account.json'
 
@@ -25,4 +26,6 @@ def download_video(file_id, output_path):
 
     while not done:
         status, done = downloader.next_chunk()
-        print(f\"Downloading: {int(status.progress() * 100)}%\")
+
+        if status:
+            print(f'Download {int(status.progress() * 100)}%')
