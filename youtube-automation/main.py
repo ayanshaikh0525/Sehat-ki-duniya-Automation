@@ -2,15 +2,20 @@ import json
 import os
 from datetime import datetime
 
-from drive_helper import download_video
+from drive_helper import (
+    download_file,
+    get_file_content,
+    get_file_id_by_name
+)
+
 from youtube_helper import upload_video
 
 TEMP_VIDEO = "temp/video.mp4"
 
 os.makedirs("temp", exist_ok=True)
 
-# Load videos
-with open("../videos_master.json", "r") as f:
+# Load workflow JSON
+with open("videos.json", "r", encoding="utf-8") as f:
     videos = json.load(f)
 
 # Find next pending YouTube upload
@@ -28,33 +33,72 @@ if video_data is None:
 
 print(f'Selected: {video_data["unique_key"]}')
 
-# Read YouTube metadata files
-youtube_meta = video_data["meta_folders"]["youtube"]
+# -----------------------------
+# GOOGLE DRIVE IDS
+# -----------------------------
 
-title_path = os.path.join(youtube_meta, "title.txt")
-description_path = os.path.join(youtube_meta, "description.txt")
-hashtags_path = os.path.join(youtube_meta, "hashtags.txt")
+video_file_id = (
+    video_data["google_drive"]["video_file_id"]
+)
 
-with open(title_path, "r", encoding="utf-8") as f:
-    title = f.read().strip()
+youtube_folder_id = (
+    video_data["meta_folders"]["youtube"]["folder_id"]
+)
 
-with open(description_path, "r", encoding="utf-8") as f:
-    description = f.read().strip()
+# -----------------------------
+# FETCH METADATA FILE IDS
+# -----------------------------
 
-with open(hashtags_path, "r", encoding="utf-8") as f:
-    hashtags = f.read().strip()
+title_file_id = get_file_id_by_name(
+    youtube_folder_id,
+    "title.txt"
+)
 
-final_description = f"{description}\n\n{hashtags}"
+description_file_id = get_file_id_by_name(
+    youtube_folder_id,
+    "description.txt"
+)
 
-# Download video
-print("Downloading video from Drive...")
+hashtags_file_id = get_file_id_by_name(
+    youtube_folder_id,
+    "hashtags.txt"
+)
 
-download_video(
-    video_data["drive_file_id"],
+# -----------------------------
+# READ FILE CONTENTS
+# -----------------------------
+
+title = get_file_content(
+    title_file_id
+).strip()
+
+description = get_file_content(
+    description_file_id
+).strip()
+
+hashtags = get_file_content(
+    hashtags_file_id
+).strip()
+
+final_description = (
+    f"{description}\n\n{hashtags}"
+)
+
+# -----------------------------
+# DOWNLOAD VIDEO
+# -----------------------------
+
+print("Downloading video...")
+
+download_file(
+    video_file_id,
     TEMP_VIDEO
 )
 
-# Upload
+# -----------------------------
+# UPLOAD TO YOUTUBE
+# -----------------------------
+
 print("Uploading to YouTube...")
 
 video_id = upload_video(
@@ -63,29 +107,51 @@ video_id = upload_video(
     final_description
 )
 
-print(f"Uploaded successfully: {video_id}")
+print(f'Uploaded successfully: {video_id}')
 
-# Update tracking
-video_data["platforms"]["youtube"]["uploaded"] = True
+# -----------------------------
+# UPDATE JSON STATUS
+# -----------------------------
 
-video_data["platforms"]["youtube"]["video_id"] = video_id
+youtube_platform = (
+    video_data["platforms"]["youtube"]
+)
 
-video_data["platforms"]["youtube"]["uploaded_at"] = (
+youtube_platform["uploaded"] = True
+
+youtube_platform["video_id"] = video_id
+
+youtube_platform["uploaded_at"] = (
     datetime.utcnow().isoformat()
 )
 
-video_data["platforms"]["youtube"]["error"] = ""
+youtube_platform["error"] = ""
 
 video_data["workflow"]["updated_at"] = (
     datetime.utcnow().isoformat()
 )
 
-# Save updated JSON
-with open("videos.json", "w") as f:
-    json.dump(videos, f, indent=2)
+video_data["workflow"]["status"] = (
+    "youtube_uploaded"
+)
 
-# Cleanup
+# -----------------------------
+# SAVE UPDATED JSON
+# -----------------------------
+
+with open("videos.json", "w", encoding="utf-8") as f:
+    json.dump(
+        videos,
+        f,
+        indent=2,
+        ensure_ascii=False
+    )
+
+# -----------------------------
+# CLEANUP
+# -----------------------------
+
 if os.path.exists(TEMP_VIDEO):
     os.remove(TEMP_VIDEO)
 
-print("Workflow completed")
+print("Workflow completed successfully")
