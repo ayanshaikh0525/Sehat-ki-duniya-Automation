@@ -51,7 +51,7 @@ youtube_folder_id = (
 
 title_file_id = get_file_id_by_name(
     youtube_folder_id,
-    "title.txt"
+    "titles.txt"
 )
 
 description_file_id = get_file_id_by_name(
