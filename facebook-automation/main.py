@@ -20,7 +20,8 @@ ACCESS_TOKEN = os.getenv("FB_ACCESS_TOKEN")
 # GOOGLE AUTH
 # ==========================================
 
-service_account_info = json.loads("auth/service_account.json")
+with open("auth/service_account.json", "r") as f:
+    service_account_info = json.load(f)
 
 scopes = [
     "https://www.googleapis.com/auth/drive.readonly"
