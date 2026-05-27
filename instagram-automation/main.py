@@ -159,7 +159,7 @@ print("Caption Ready")
 # ==========================================
 
 create_url = f"https://graph.facebook.com/v23.0/{IG_USER_ID}/media"
-
+print(ACCESS_TOKEN)
 payload = {
     "media_type": "REELS",
     "video_url": video_url,
@@ -256,7 +256,7 @@ if "id" in publish_result:
 
     video_data["workflow"]["updated_at"] = datetime.utcnow().isoformat()
 
-    with open("videos.json", "w", encoding="utf-8") as f:
+    with open("../videos_master.json.json", "w", encoding="utf-8") as f:
         json.dump(videos, f, indent=2, ensure_ascii=False)
 
 else:
