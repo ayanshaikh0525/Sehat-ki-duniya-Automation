@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime
 
 from drive_helper import download_video
 from youtube_helper import upload_video
@@ -9,58 +10,82 @@ TEMP_VIDEO = "temp/video.mp4"
 os.makedirs("temp", exist_ok=True)
 
 # Load videos
-with open("../videos_master.json", "r") as f:
+with open("videos.json", "r") as f:
     videos = json.load(f)
 
-# Find next pending video
+# Find next pending YouTube upload
 video_data = next(
-    (video for video in videos if not video["platforms"]["youtube"]["uploaded"]),
+    (
+        video for video in videos
+        if not video["platforms"]["youtube"]["uploaded"]
+    ),
     None
 )
 
-# Exit if nothing pending
 if video_data is None:
-    print("No pending videos found")
+    print("No pending YouTube uploads")
     raise SystemExit
 
-print(f'Selected Video ID: {video_data["id"]}')
+print(f'Selected: {video_data["unique_key"]}')
 
-# Download video from Google Drive
-print("Downloading video from Google Drive...")
+# Read YouTube metadata files
+youtube_meta = video_data["meta_folders"]["youtube"]
+
+title_path = os.path.join(youtube_meta, "title.txt")
+description_path = os.path.join(youtube_meta, "description.txt")
+hashtags_path = os.path.join(youtube_meta, "hashtags.txt")
+
+with open(title_path, "r", encoding="utf-8") as f:
+    title = f.read().strip()
+
+with open(description_path, "r", encoding="utf-8") as f:
+    description = f.read().strip()
+
+with open(hashtags_path, "r", encoding="utf-8") as f:
+    hashtags = f.read().strip()
+
+final_description = f"{description}\n\n{hashtags}"
+
+# Download video
+print("Downloading video from Drive...")
 
 download_video(
     video_data["drive_file_id"],
     TEMP_VIDEO
 )
 
-# Build description
-hashtags = " ".join(video_data["hashtags"])
-
-description = (
-    f'{video_data["description"]}\n\n{hashtags}'
-)
-
-# Upload to YouTube
+# Upload
 print("Uploading to YouTube...")
 
 video_id = upload_video(
     TEMP_VIDEO,
-    video_data["title"],
-    description
+    title,
+    final_description
 )
 
-print(f'Upload successful: {video_id}')
+print(f"Uploaded successfully: {video_id}")
 
-# Update JSON status
-video_data["uploaded"] = True
-video_data["youtube_video_id"] = video_id
+# Update tracking
+video_data["platforms"]["youtube"]["uploaded"] = True
+
+video_data["platforms"]["youtube"]["video_id"] = video_id
+
+video_data["platforms"]["youtube"]["uploaded_at"] = (
+    datetime.utcnow().isoformat()
+)
+
+video_data["platforms"]["youtube"]["error"] = ""
+
+video_data["workflow"]["updated_at"] = (
+    datetime.utcnow().isoformat()
+)
 
 # Save updated JSON
 with open("videos.json", "w") as f:
     json.dump(videos, f, indent=2)
 
-# Cleanup temp file
+# Cleanup
 if os.path.exists(TEMP_VIDEO):
     os.remove(TEMP_VIDEO)
 
-print("videos.json updated successfully")
+print("Workflow completed")
