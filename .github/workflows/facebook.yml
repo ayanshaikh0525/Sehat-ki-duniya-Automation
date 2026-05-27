@@ -1,0 +1,54 @@
+name: Facebook Upload
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "30 4 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: cd facebook-automaton && pip install -r requirements.txt
+
+
+      - name: Restore Auth Files
+        run: |
+          cd facebook-automation
+
+          mkdir -p auth
+
+          echo "${{ secrets.SERVICE_ACCOUNT_JSON }}" | base64 -d > auth/service_account.json
+
+
+      - name: Run Facebook Upload
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
+        run: cd facebook-automaton && python main.py
+
+      - name: Commit updated JSON
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
+          git add video_master.json
+
+          git commit -m "Facebook upload update" || echo "No changes"
+
+          git push
