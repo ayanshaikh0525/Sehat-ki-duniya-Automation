@@ -1,0 +1,4 @@
+requests==2.32.3
+python-dotenv==1.0.1
+PyDrive2==1.19.0
+oauth2client==4.1.3

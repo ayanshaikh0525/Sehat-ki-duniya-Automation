@@ -1,0 +1,91 @@
+name: Instagram Automation
+
+on:
+  schedule:
+    # Every 30 minutes
+    - cron: "*/30 * * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  upload-instagram-reel:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # ==========================================
+      # CHECKOUT REPO
+      # ==========================================
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+
+      # ==========================================
+      # SETUP PYTHON
+      # ==========================================
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+
+      # ==========================================
+      # INSTALL DEPENDENCIES
+      # ==========================================
+
+      - name: Install Dependencies
+        run: |
+          cd instagram-automation
+          pip install -r requirements.txt
+
+
+      # ==========================================
+      # CREATE GOOGLE SERVICE ACCOUNT FILE
+      # ==========================================
+
+      - name: Create Google Service Account File
+        run: |
+          mkdir -p auth
+          echo '${{ secrets.SERVICE_ACCOUNT_JSON }}' > auth/service_account.json
+
+
+      # ==========================================
+      # CREATE .ENV FILE
+      # ==========================================
+
+      - name: Create ENV File
+        run: |
+          cd instagram-automation
+          echo "IG_ACCESS_TOKEN=${{ secrets.IG_ACCESS_TOKEN }}" >> .env
+          echo "IG_USER_ID=${{ secrets.IG_USER_ID }}" >> .env
+
+
+      # ==========================================
+      # RUN INSTAGRAM AUTOMATION
+      # ==========================================
+
+      - name: Run Instagram Automation
+        run: |
+          cd instagram-automation && python main.py
+
+
+      # ==========================================
+      # COMMIT UPDATED JSON
+      # ==========================================
+
+      - name: Commit Updated JSON
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          git add videos_master.json
+
+          git diff --cached --quiet || git commit -m "Update Instagram upload status"
+
+          git push
