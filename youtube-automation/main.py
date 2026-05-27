@@ -1,7 +1,7 @@
 import json
 import os
-from datetime import datetime
 import re
+from datetime import datetime
 from drive_helper import (
     download_file,
     get_file_content,
@@ -54,11 +54,6 @@ title_file_id = get_file_id_by_name(
     "titles.txt"
 )
 
-title = re.sub(
-    r'^\s*\d+[\.\)]\s*',
-    '',
-    title
-).strip()
 
 description_file_id = get_file_id_by_name(
     youtube_folder_id,
@@ -76,6 +71,12 @@ hashtags_file_id = get_file_id_by_name(
 
 title = get_file_content(
     title_file_id
+).strip()
+
+title = re.sub(
+    r'^\s*\d+[\.\)]\s*',
+    '',
+    title
 ).strip()
 
 description = get_file_content(
