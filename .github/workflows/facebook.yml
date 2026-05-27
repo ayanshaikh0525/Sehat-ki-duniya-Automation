@@ -24,7 +24,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: cd facebook-automaton && pip install -r requirements.txt
+        run: cd facebook-automation && pip install -r requirements.txt
 
 
       - name: Restore Auth Files
