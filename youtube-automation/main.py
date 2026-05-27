@@ -15,7 +15,7 @@ TEMP_VIDEO = "temp/video.mp4"
 os.makedirs("temp", exist_ok=True)
 
 # Load workflow JSON
-with open("videos.json", "r", encoding="utf-8") as f:
+with open("../videos_master.json", "r", encoding="utf-8") as f:
     videos = json.load(f)
 
 # Find next pending YouTube upload
@@ -139,7 +139,7 @@ video_data["workflow"]["status"] = (
 # SAVE UPDATED JSON
 # -----------------------------
 
-with open("videos.json", "w", encoding="utf-8") as f:
+with open("../videos_master.json", "w", encoding="utf-8") as f:
     json.dump(
         videos,
         f,
