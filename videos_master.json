@@ -7609,7 +7609,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": ""
+        "error": "{'error': {'message': 'Invalid OAuth access token - Cannot parse access token', 'type': 'OAuthException', 'code': 190, 'fbtrace_id': 'AvRnmyuiArPvT0juZZn6qaU'}}"
       },
       "facebook": {
         "uploaded": false,
@@ -7646,7 +7646,7 @@
       "status": "pending",
       "retry_count": 0,
       "created_at": "2026-05-27T07:01:37.224183",
-      "updated_at": "2026-05-27T07:01:37.224204"
+      "updated_at": "2026-05-27T12:21:58.129753"
     }
   },
   {
