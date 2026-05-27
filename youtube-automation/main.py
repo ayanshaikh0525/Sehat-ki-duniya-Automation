@@ -9,7 +9,7 @@ TEMP_VIDEO = "temp/video.mp4"
 os.makedirs("temp", exist_ok=True)
 
 # Load videos
-with open("videos.json", "r") as f:
+with open("../videos_master.json", "r") as f:
     videos = json.load(f)
 
 # Find next pending video
