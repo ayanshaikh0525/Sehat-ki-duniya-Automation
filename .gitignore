@@ -1,0 +1,8 @@
+youtube-automation/auth/
+*.pickle
+
+youtube-automation/auth/client_secret.json
+youtube-automation/auth/service_account.json
+
+__pycache__/
+.env
