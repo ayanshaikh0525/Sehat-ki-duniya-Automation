@@ -232,7 +232,7 @@ else:
 # SAVE JSON
 # ==========================================
 
-with open("video_master.json", "w", encoding="utf-8") as f:
+with open("../videos_master.json", "w", encoding="utf-8") as f:
     json.dump(videos, f, indent=2)
 
 print("\nvideo_master.json updated")
