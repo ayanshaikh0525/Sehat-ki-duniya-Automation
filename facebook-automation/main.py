@@ -41,7 +41,7 @@ drive = GoogleDrive(gauth)
 # LOAD JSON
 # ==========================================
 
-with open("video_master.json", "r", encoding="utf-8") as f:
+with open("../video_master.json", "r", encoding="utf-8") as f:
     videos = json.load(f)
 
 # ==========================================
