@@ -2855,7 +2855,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": ""
+        "error": "Please reduce the amount of data you're asking for, then retry your request"
       },
       "threads": {
         "uploaded": false,
