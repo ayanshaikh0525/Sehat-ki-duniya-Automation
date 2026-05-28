@@ -15,7 +15,7 @@ from pydrive2.drive import GoogleDrive
 
 gauth = GoogleAuth()
 
-gauth.LoadServiceConfigSettings("settings.yaml")
+gauth.LoadSettingsFile("settings.yaml")
 
 gauth.ServiceAuth()
 
