@@ -1,0 +1,68 @@
+name: Threads Automation
+
+on:
+  schedule:
+    # 10:00 AM IST
+    - cron: "30 4 * * *"
+
+  workflow_dispatch:
+
+jobs:
+  upload-threads-video:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # ==========================================
+      # CHECKOUT REPOSITORY
+      # ==========================================
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # ==========================================
+      # SETUP PYTHON
+      # ==========================================
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # ==========================================
+      # INSTALL DEPENDENCIES
+      # ==========================================
+
+      - name: Install Dependencies
+        run: |
+          cd threads-automation
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ==========================================
+      # RUN THREADS AUTOMATION
+      # ==========================================
+
+      - name: Run Threads Upload Script
+        env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+        run: |
+          cd threads-automation
+          python main.py
+
+      # ==========================================
+      # COMMIT UPDATED master.json
+      # ==========================================
+
+      - name: Commit Updated JSON
+        run: |
+
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add videos_master.json
+
+          git commit -m "Update Threads upload status" || echo "No changes to commit"
+
+          git push
