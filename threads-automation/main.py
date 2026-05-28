@@ -5,34 +5,33 @@ import os
 import random
 from datetime import datetime
 from helper import read_text_file_from_drive_folder
-
 from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
+from oauth2client.service_account import ServiceAccountCredentials
+import json
 
-from pydrive2.auth import GoogleAuth
-from pydrive2.drive import GoogleDrive
 
 # ==========================================
-# GOOGLE DRIVE AUTH
+# GOOGLE AUTH
 # ==========================================
 
-gauth = GoogleAuth()
+with open("auth/service_account.json", "r") as f:
+    service_account_info = json.load(f)
 
-gauth.settings['client_config_backend'] = 'service'
-
-gauth.settings['service_config'] = {
-    "client_json_file_path": "auth/service_account.json"
-}
-
-gauth.settings['oauth_scope'] = [
-    'https://www.googleapis.com/auth/drive'
+scopes = [
+    "https://www.googleapis.com/auth/drive.readonly"
 ]
 
-gauth.ServiceAuth()
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(
+    service_account_info,
+    scopes
+)
+
+gauth = GoogleAuth()
+gauth.credentials = credentials
 
 drive = GoogleDrive(gauth)
 
-print("Google Drive authenticated")
 
 # ==========================================
 # CONFIG
