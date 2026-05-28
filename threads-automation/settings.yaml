@@ -1,9 +1,0 @@
-client_config_backend: service
-
-service_config:
-  client_json_file_path: auth/service_account.json
-
-save_credentials: False
-
-oauth_scope:
-  - https://www.googleapis.com/auth/drive
