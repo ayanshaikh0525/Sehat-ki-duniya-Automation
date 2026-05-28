@@ -5,6 +5,24 @@ import os
 import random
 from datetime import datetime
 from helper import read_text_file_from_drive_folder
+
+from pydrive2.auth import GoogleAuth
+from pydrive2.drive import GoogleDrive
+
+# ==========================================
+# GOOGLE DRIVE AUTH
+# ==========================================
+
+gauth = GoogleAuth()
+
+gauth.LoadServiceConfigSettings("settings.yaml")
+
+gauth.ServiceAuth()
+
+drive = GoogleDrive(gauth)
+
+print("Google Drive authenticated")
+
 # ==========================================
 # CONFIG
 # ==========================================
