@@ -4,7 +4,7 @@ import time
 import os
 import random
 from datetime import datetime
-
+from helper import read_text_file_from_drive_folder
 # ==========================================
 # CONFIG
 # ==========================================
@@ -71,20 +71,32 @@ print(video_url)
 # READ THREADS CONTENT
 # ==========================================
 
-folder_name = data["folder_name"]
+# ==========================================
+# THREADS FOLDER ID
+# ==========================================
 
-post_path = f"{folder_name}/threads/post.txt"
-question_path = f"{folder_name}/threads/question.txt"
+threads_folder_id = data["meta_folders"]["threads"]["folder_id"]
 
-# Read post text
-with open(post_path, "r", encoding="utf-8") as f:
-    post_text = f.read().strip()
+# ==========================================
+# READ CONTENT FILES
+# ==========================================
 
-# Read question text
-with open(question_path, "r", encoding="utf-8") as f:
-    question_text = f.read().strip()
+post_text = read_text_file_from_drive_folder(
+    drive,
+    threads_folder_id,
+    "post.txt"
+)
 
-# Final caption
+question_text = read_text_file_from_drive_folder(
+    drive,
+    threads_folder_id,
+    "question.txt"
+)
+
+# ==========================================
+# FINAL CAPTION
+# ==========================================
+
 caption = f"{post_text}\n\n{question_text}"
 
 print("\nCAPTION:")
