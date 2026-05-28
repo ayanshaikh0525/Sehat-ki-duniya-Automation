@@ -9,13 +9,24 @@ from helper import read_text_file_from_drive_folder
 from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
 
+from pydrive2.auth import GoogleAuth
+from pydrive2.drive import GoogleDrive
+
 # ==========================================
 # GOOGLE DRIVE AUTH
 # ==========================================
 
 gauth = GoogleAuth()
 
-gauth.LoadSettingsFile("settings.yaml")
+gauth.settings['client_config_backend'] = 'service'
+
+gauth.settings['service_config'] = {
+    "client_json_file_path": "auth/service_account.json"
+}
+
+gauth.settings['oauth_scope'] = [
+    'https://www.googleapis.com/auth/drive'
+]
 
 gauth.ServiceAuth()
 
