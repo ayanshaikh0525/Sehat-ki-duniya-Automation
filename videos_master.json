@@ -2260,7 +2260,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": ""
+        "error": "(#100) No permission to publish the video"
       },
       "threads": {
         "uploaded": false,
