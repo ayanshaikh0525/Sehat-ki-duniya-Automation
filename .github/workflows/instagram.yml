@@ -2,8 +2,8 @@ name: Instagram Automation
 
 on:
   schedule:
-    # Every 30 minutes
-    - cron: "*/30 * * * *"
+    
+    - cron: "30 2,14 * * *"
 
   workflow_dispatch:
 
