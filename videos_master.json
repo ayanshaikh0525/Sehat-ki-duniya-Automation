@@ -6252,9 +6252,9 @@
         "error": ""
       },
       "facebook": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "post_id": "1487263843177048",
+        "uploaded_at": "2026-06-01T20:41:16.434891",
         "error": ""
       },
       "threads": {
@@ -6283,10 +6283,10 @@
       }
     },
     "workflow": {
-      "status": "youtube_uploaded",
+      "status": "facebook_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:01:15.599250",
-      "updated_at": "2026-05-31T13:59:07.230614"
+      "updated_at": "2026-06-01T20:41:16.434902"
     }
   },
   {
