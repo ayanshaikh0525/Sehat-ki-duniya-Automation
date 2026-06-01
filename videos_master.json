@@ -3025,7 +3025,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": ""
+        "error": "Error validating access token: The session is invalid because the user logged out."
       },
       "threads": {
         "uploaded": false,
