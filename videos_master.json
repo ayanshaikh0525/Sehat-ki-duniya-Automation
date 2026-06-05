@@ -1753,9 +1753,9 @@
         "error": "Error validating access token: The session is invalid because the user logged out."
       },
       "threads": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "post_id": "18132619135600844",
+        "uploaded_at": "2026-06-05T17:29:31.700186",
         "error": ""
       },
       "pinterest": {
@@ -1778,10 +1778,10 @@
       }
     },
     "workflow": {
-      "status": "pending",
+      "status": "threads_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:00:02.812549",
-      "updated_at": "2026-05-27T07:00:02.812565"
+      "updated_at": "2026-06-05T17:29:31.700196"
     }
   },
   {
