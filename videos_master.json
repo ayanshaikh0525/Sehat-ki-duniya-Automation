@@ -1067,9 +1067,9 @@
         "error": ""
       },
       "facebook": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "post_id": "1718918275788526",
+        "uploaded_at": "2026-06-07T08:05:22.312999",
         "error": ""
       },
       "threads": {
@@ -1098,10 +1098,10 @@
       }
     },
     "workflow": {
-      "status": "pending",
+      "status": "facebook_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T06:59:51.268315",
-      "updated_at": "2026-05-27T06:59:51.268337"
+      "updated_at": "2026-06-07T08:05:22.313010"
     }
   },
   {
