@@ -7791,7 +7791,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": ""
+        "error": "{'error': {'message': 'The requested resource does not exist', 'type': 'OAuthException', 'code': 24, 'error_subcode': 4279009, 'is_transient': False, 'error_user_title': 'Media Not Found', 'error_user_msg': 'The media with id 18027420170657981 cannot be found.', 'fbtrace_id': 'A83-E7SqujVDZ877ycc0FaF'}}"
       },
       "pinterest": {
         "uploaded": false,
@@ -7816,7 +7816,7 @@
       "status": "youtube_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:01:39.982910",
-      "updated_at": "2026-05-30T13:53:36.432865"
+      "updated_at": "2026-06-16T19:03:35.764578"
     }
   },
   {
