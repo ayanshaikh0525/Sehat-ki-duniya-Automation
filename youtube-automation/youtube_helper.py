@@ -4,8 +4,16 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
 def get_youtube_service():
-    with open("auth/token.pickle", "rb") as token:
-        creds = pickle.load(token)
+    creds = Credentials.from_authorized_user_file(
+        "auth/token.json",
+        ["https://www.googleapis.com/auth/youtube.upload"]
+    )
+
+    if creds.expired and creds.refresh_token:
+        creds.refresh(Request())
+
+        with open("auth/token.json", "w") as f:
+            f.write(creds.to_json())
 
     return build("youtube", "v3", credentials=creds)
 
