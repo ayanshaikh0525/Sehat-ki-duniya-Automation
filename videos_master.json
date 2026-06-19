@@ -9215,9 +9215,9 @@
     },
     "platforms": {
       "youtube": {
-        "uploaded": false,
-        "video_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "video_id": "Mx63388MOO8",
+        "uploaded_at": "2026-06-19T15:33:19.641894",
         "error": ""
       },
       "instagram": {
@@ -9258,10 +9258,10 @@
       }
     },
     "workflow": {
-      "status": "pending",
+      "status": "youtube_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:02:02.368786",
-      "updated_at": "2026-06-11T08:21:26.267057"
+      "updated_at": "2026-06-19T15:33:19.641904"
     }
   },
   {
