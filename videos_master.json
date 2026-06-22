@@ -4218,10 +4218,10 @@
         "error": ""
       },
       "threads": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
-        "error": "{'error': {'message': 'The requested resource does not exist', 'type': 'OAuthException', 'code': 24, 'error_subcode': 4279009, 'is_transient': False, 'error_user_title': 'Media Not Found', 'error_user_msg': 'The media with id 18026029046657981 cannot be found.', 'fbtrace_id': 'AP4InMo5jCYGjftb_bfyHUW'}}"
+        "uploaded": true,
+        "post_id": "18082671617235745",
+        "uploaded_at": "2026-06-22T18:57:21.638415",
+        "error": ""
       },
       "pinterest": {
         "uploaded": false,
@@ -4243,10 +4243,10 @@
       }
     },
     "workflow": {
-      "status": "pending",
+      "status": "threads_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:00:42.665715",
-      "updated_at": "2026-06-04T08:07:29.549918"
+      "updated_at": "2026-06-22T18:57:21.638426"
     }
   },
   {
