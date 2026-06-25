@@ -3945,9 +3945,9 @@
     },
     "platforms": {
       "youtube": {
-        "uploaded": false,
-        "video_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "video_id": "OM6QTGyY_pI",
+        "uploaded_at": "2026-06-25T04:07:26.868846",
         "error": ""
       },
       "instagram": {
@@ -3988,10 +3988,10 @@
       }
     },
     "workflow": {
-      "status": "threads_uploaded",
+      "status": "youtube_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:00:38.472245",
-      "updated_at": "2026-06-18T18:16:23.150377"
+      "updated_at": "2026-06-25T04:07:26.868855"
     }
   },
   {
