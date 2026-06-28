@@ -7187,9 +7187,9 @@
         "error": "{'error': {'message': 'Media ID is not available', 'type': 'OAuthException', 'code': 9007, 'error_subcode': 2207027, 'is_transient': False, 'error_user_title': 'Cannot Publish', 'error_user_msg': 'The media is not ready for publishing, please wait for a moment', 'fbtrace_id': 'AStzpiRyEpriBaIfreyq00g'}}"
       },
       "facebook": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "post_id": "1046746164508241",
+        "uploaded_at": "2026-06-28T17:40:59.926697",
         "error": ""
       },
       "threads": {
@@ -7218,10 +7218,10 @@
       }
     },
     "workflow": {
-      "status": "pending",
+      "status": "facebook_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:01:30.309908",
-      "updated_at": "2026-06-28T15:48:07.299390"
+      "updated_at": "2026-06-28T17:40:59.926706"
     }
   },
   {
