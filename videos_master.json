@@ -5232,9 +5232,9 @@
         "error": ""
       },
       "facebook": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "post_id": "1384040377156925",
+        "uploaded_at": "2026-07-02T07:49:05.645635",
         "error": ""
       },
       "threads": {
@@ -5263,10 +5263,10 @@
       }
     },
     "workflow": {
-      "status": "threads_uploaded",
+      "status": "facebook_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:00:59.542797",
-      "updated_at": "2026-06-20T17:02:44.579290"
+      "updated_at": "2026-07-02T07:49:05.645645"
     }
   },
   {
