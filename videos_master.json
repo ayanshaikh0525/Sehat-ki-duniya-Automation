@@ -3022,10 +3022,10 @@
         "error": "{'error': {'message': 'Error validating access token: Session has expired on Wednesday, 27-May-26 07:00:00 PDT. The current time is Wednesday, 27-May-26 16:06:53 PDT.', 'type': 'OAuthException', 'code': 190, 'error_subcode': 463, 'fbtrace_id': 'AQOH_VW7XSvo-vagaFTpFip'}}"
       },
       "facebook": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
-        "error": "Error validating access token: The session is invalid because the user logged out."
+        "uploaded": true,
+        "post_id": "2138752483367679",
+        "uploaded_at": "2026-07-03T17:54:04.214602",
+        "error": ""
       },
       "threads": {
         "uploaded": true,
@@ -3053,10 +3053,10 @@
       }
     },
     "workflow": {
-      "status": "threads_uploaded",
+      "status": "facebook_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:00:23.444051",
-      "updated_at": "2026-06-13T16:57:20.405809"
+      "updated_at": "2026-07-03T17:54:04.214613"
     }
   },
   {
