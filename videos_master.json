@@ -4558,9 +4558,9 @@
         "error": ""
       },
       "threads": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "post_id": "18358938793243005",
+        "uploaded_at": "2026-07-05T06:55:12.669953",
         "error": ""
       },
       "pinterest": {
@@ -4583,10 +4583,10 @@
       }
     },
     "workflow": {
-      "status": "pending",
+      "status": "threads_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:00:47.879785",
-      "updated_at": "2026-05-27T07:00:47.879800"
+      "updated_at": "2026-07-05T06:55:12.669961"
     }
   },
   {
