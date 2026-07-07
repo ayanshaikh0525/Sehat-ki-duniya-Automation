@@ -6932,9 +6932,9 @@
         "error": ""
       },
       "facebook": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "post_id": "993798013494149",
+        "uploaded_at": "2026-07-07T18:25:21.564055",
         "error": ""
       },
       "threads": {
@@ -6963,10 +6963,10 @@
       }
     },
     "workflow": {
-      "status": "pending",
+      "status": "facebook_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:01:26.373205",
-      "updated_at": "2026-06-02T19:00:46.953237"
+      "updated_at": "2026-07-07T18:25:21.564065"
     }
   },
   {
