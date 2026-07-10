@@ -9904,7 +9904,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": "{'error': {'message': 'Media ID is not available', 'type': 'OAuthException', 'code': 9007, 'error_subcode': 2207027, 'is_transient': False, 'error_user_title': 'Cannot Publish', 'error_user_msg': 'The media is not ready for publishing, please wait for a moment', 'fbtrace_id': 'AHLLDemL3OPsWUnb1j8G27B'}}"
+        "error": "{'error': {'message': 'Media ID is not available', 'type': 'OAuthException', 'code': 9007, 'error_subcode': 2207027, 'is_transient': False, 'error_user_title': 'Cannot Publish', 'error_user_msg': 'The media is not ready for publishing, please wait for a moment', 'fbtrace_id': 'ABhwdewGK_dkOhDPpqPtZrE'}}"
       },
       "facebook": {
         "uploaded": false,
@@ -9941,7 +9941,7 @@
       "status": "pending",
       "retry_count": 0,
       "created_at": "2026-05-27T07:02:12.992808",
-      "updated_at": "2026-06-24T17:28:24.539513"
+      "updated_at": "2026-07-10T06:25:35.449771"
     }
   },
   {
