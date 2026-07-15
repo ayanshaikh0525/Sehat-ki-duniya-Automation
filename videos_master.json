@@ -2773,9 +2773,9 @@
         "error": ""
       },
       "threads": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "post_id": "17947304607218299",
+        "uploaded_at": "2026-07-15T16:51:59.703436",
         "error": ""
       },
       "pinterest": {
@@ -2798,10 +2798,10 @@
       }
     },
     "workflow": {
-      "status": "facebook_uploaded",
+      "status": "threads_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:00:19.521623",
-      "updated_at": "2026-06-20T08:02:35.753798"
+      "updated_at": "2026-07-15T16:51:59.703449"
     }
   },
   {
