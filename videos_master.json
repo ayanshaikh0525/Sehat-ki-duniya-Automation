@@ -3878,9 +3878,9 @@
         "error": ""
       },
       "threads": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "post_id": "18102539324350502",
+        "uploaded_at": "2026-07-19T16:27:43.774196",
         "error": ""
       },
       "pinterest": {
@@ -3903,10 +3903,10 @@
       }
     },
     "workflow": {
-      "status": "pending",
+      "status": "threads_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:00:36.929185",
-      "updated_at": "2026-07-03T16:06:30.497915"
+      "updated_at": "2026-07-19T16:27:43.774209"
     }
   },
   {
