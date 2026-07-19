@@ -4722,10 +4722,10 @@
         "error": ""
       },
       "facebook": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
-        "error": "(#100) No permission to publish the video"
+        "uploaded": true,
+        "post_id": "1517619616153510",
+        "uploaded_at": "2026-07-19T17:29:21.975373",
+        "error": ""
       },
       "threads": {
         "uploaded": false,
@@ -4753,10 +4753,10 @@
       }
     },
     "workflow": {
-      "status": "pending",
+      "status": "facebook_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:00:51.033087",
-      "updated_at": "2026-05-27T07:00:51.033105"
+      "updated_at": "2026-07-19T17:29:21.975383"
     }
   },
   {
