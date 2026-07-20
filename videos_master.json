@@ -9397,9 +9397,9 @@
         "error": ""
       },
       "facebook": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "post_id": "1682269956371310",
+        "uploaded_at": "2026-07-20T07:39:05.108052",
         "error": ""
       },
       "threads": {
@@ -9428,10 +9428,10 @@
       }
     },
     "workflow": {
-      "status": "youtube_uploaded",
+      "status": "facebook_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:02:05.122811",
-      "updated_at": "2026-05-30T03:58:55.531082"
+      "updated_at": "2026-07-20T07:39:05.108062"
     }
   },
   {
