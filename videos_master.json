@@ -2002,9 +2002,9 @@
         "error": ""
       },
       "facebook": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "post_id": "1445673494262665",
+        "uploaded_at": "2026-07-20T18:26:10.517538",
         "error": ""
       },
       "threads": {
@@ -2033,10 +2033,10 @@
       }
     },
     "workflow": {
-      "status": "threads_uploaded",
+      "status": "facebook_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:00:07.167185",
-      "updated_at": "2026-07-15T05:54:11.141593"
+      "updated_at": "2026-07-20T18:26:10.517548"
     }
   },
   {
