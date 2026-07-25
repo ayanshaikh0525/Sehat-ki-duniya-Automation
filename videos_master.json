@@ -2263,9 +2263,9 @@
         "error": "(#100) No permission to publish the video"
       },
       "threads": {
-        "uploaded": false,
-        "post_id": "",
-        "uploaded_at": "",
+        "uploaded": true,
+        "post_id": "18008529647941067",
+        "uploaded_at": "2026-07-25T06:02:24.454336",
         "error": ""
       },
       "pinterest": {
@@ -2288,10 +2288,10 @@
       }
     },
     "workflow": {
-      "status": "pending",
+      "status": "threads_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:00:11.414129",
-      "updated_at": "2026-05-27T07:00:11.414149"
+      "updated_at": "2026-07-25T06:02:24.454348"
     }
   },
   {
