@@ -5909,7 +5909,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": "{'error': {'message': 'Invalid OAuth access token - Cannot parse access token', 'type': 'OAuthException', 'code': 190, 'fbtrace_id': 'AUyUzSdKjKIAOzk1z4fqWa2'}}"
+        "error": "{'error': {'message': 'Error validating access token: Session has expired on Friday, 31-Jul-26 04:56:19 PDT. The current time is Friday, 31-Jul-26 09:15:42 PDT.', 'type': 'OAuthException', 'code': 190, 'error_subcode': 463, 'fbtrace_id': 'AFg-lt2JISjFfjBEQ4iukwD'}}"
       },
       "facebook": {
         "uploaded": false,
@@ -5946,7 +5946,7 @@
       "status": "pending",
       "retry_count": 0,
       "created_at": "2026-05-27T07:01:10.210144",
-      "updated_at": "2026-05-27T12:25:43.939296"
+      "updated_at": "2026-07-31T16:15:42.369329"
     }
   },
   {
