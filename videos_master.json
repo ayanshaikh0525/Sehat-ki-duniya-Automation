@@ -9570,7 +9570,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": ""
+        "error": "Error validating access token: Session has expired on Friday, 31-Jul-26 04:56:19 PDT. The current time is Monday, 03-Aug-26 00:55:39 PDT."
       },
       "threads": {
         "uploaded": false,
