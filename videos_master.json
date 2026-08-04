@@ -214,7 +214,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": ""
+        "error": "{'error': {'message': 'Error validating access token: Session has expired on Friday, 31-Jul-26 04:56:19 PDT. The current time is Monday, 03-Aug-26 22:28:24 PDT.', 'type': 'OAuthException', 'code': 190, 'error_subcode': 463, 'fbtrace_id': 'Amvyps0KDmTkOZ-J5doO5Qa'}}"
       },
       "facebook": {
         "uploaded": true,
@@ -251,7 +251,7 @@
       "status": "threads_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T06:59:35.107675",
-      "updated_at": "2026-07-20T06:33:44.981934"
+      "updated_at": "2026-08-04T05:28:24.371337"
     }
   },
   {
