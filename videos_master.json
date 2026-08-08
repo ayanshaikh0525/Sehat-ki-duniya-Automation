@@ -2855,7 +2855,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": "Please reduce the amount of data you're asking for, then retry your request"
+        "error": "Error validating access token: Session has expired on Friday, 31-Jul-26 04:56:19 PDT. The current time is Saturday, 08-Aug-26 09:58:52 PDT."
       },
       "threads": {
         "uploaded": false,
