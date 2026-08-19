@@ -645,7 +645,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": "(#100) No permission to publish the video"
+        "error": "Error validating access token: Session has expired on Friday, 31-Jul-26 04:56:19 PDT. The current time is Tuesday, 18-Aug-26 21:58:15 PDT."
       },
       "threads": {
         "uploaded": false,
