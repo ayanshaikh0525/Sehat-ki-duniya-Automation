@@ -6759,7 +6759,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": "{'error': {'message': 'Media ID is not available', 'type': 'OAuthException', 'code': 9007, 'error_subcode': 2207027, 'is_transient': False, 'error_user_title': 'Cannot Publish', 'error_user_msg': 'The media is not ready for publishing, please wait for a moment', 'fbtrace_id': 'AHzMgPcd7SQ-dnqauCFHMiA'}}"
+        "error": "{'error': {'message': 'Error validating access token: Session has expired on Friday, 31-Jul-26 04:56:19 PDT. The current time is Thursday, 20-Aug-26 20:28:41 PDT.', 'type': 'OAuthException', 'code': 190, 'error_subcode': 463, 'fbtrace_id': 'AClqqKNPPl3HnlNM5Xld5f-'}}"
       },
       "facebook": {
         "uploaded": true,
@@ -6796,7 +6796,7 @@
       "status": "facebook_uploaded",
       "retry_count": 0,
       "created_at": "2026-05-27T07:01:23.429298",
-      "updated_at": "2026-07-08T06:43:44.268282"
+      "updated_at": "2026-08-21T03:28:41.237836"
     }
   },
   {
