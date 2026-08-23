@@ -7524,7 +7524,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": ""
+        "error": "Video file missing"
       },
       "facebook": {
         "uploaded": true,
