@@ -9054,7 +9054,7 @@
         "uploaded": false,
         "post_id": "",
         "uploaded_at": "",
-        "error": "{'error': {'message': 'Error validating access token: Session has expired on Friday, 31-Jul-26 04:56:19 PDT. The current time is Sunday, 16-Aug-26 07:46:40 PDT.', 'type': 'OAuthException', 'code': 190, 'error_subcode': 463, 'fbtrace_id': 'A91XlH9CLFtr4DXs4xxeRQb'}}"
+        "error": "Video file missing"
       },
       "facebook": {
         "uploaded": true,
